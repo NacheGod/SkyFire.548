@@ -17,8 +17,8 @@
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef TRINITY_COMPILERDEFS_H
-#define TRINITY_COMPILERDEFS_H
+#ifndef SKYFIRE_COMPILERDEFS_H
+#define SKYFIRE_COMPILERDEFS_H
 
 #define PLATFORM_WINDOWS 0
 #define PLATFORM_UNIX    1
@@ -42,6 +42,10 @@
 #define COMPILER_GNU       1
 #define COMPILER_BORLAND   2
 #define COMPILER_INTEL     3
+
+#if defined _MSC_VER && _MSC_VER >= 1910
+#include <stack>
+#endif
 
 #ifdef _MSC_VER
 #  define COMPILER COMPILER_MICROSOFT

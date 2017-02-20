@@ -17,17 +17,26 @@
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-// THIS FILE IS DEPRECATED
+// Core configuration options
 
-#ifndef TRINITY_SYSTEMCONFIG_H
-#define TRINITY_SYSTEMCONFIG_H
+#ifndef SKYFIRE_SYSTEMCONFIG_H
+#define SKYFIRE_SYSTEMCONFIG_H
 
 #include "Define.h"
 #include "revision.h"
 
 #define _PACKAGENAME "SkyFire 5.x.x"
 
-#if TRINITY_ENDIAN == TRINITY_BIGENDIAN
+// Format is YYYYMMDDRR where RR is the change in the conf file
+// for that day.
+#ifndef SKYFIREWORLD_CONFIG_VERSION
+# define SKYFIREWORLD_CONFIG_VERSION 2017021900
+#endif
+#ifndef SKYFIREAUTH_CONFIG_VERSION
+# define SKYFIREAUTH_CONFIG_VERSION 2017021900
+#endif
+
+#if SKYFIRE_ENDIAN == SKYFIRE_BIGENDIAN
 # define _ENDIAN_STRING "big-endian"
 #else
 # define _ENDIAN_STRING "little-endian"
